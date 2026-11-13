@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form BMT UGT - Sistem Aktif</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#1b4d3e] min-h-screen flex items-center justify-center p-4">
+
+    <!-- Container Utama -->
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-8 relative overflow-hidden">
+        
+        <!-- Garis Hijau di Bagian Atas -->
+        <div class="absolute top-0 left-0 right-0 h-2 bg-[#1b4d3e]"></div>
+
+        <!-- Logo & Header -->
+        <div class="text-center mt-2">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-[#285c4d] text-white rounded-xl shadow-md mb-3">
+                <i class="fa-solid fa-landmark text-3xl"></i>
+            </div>
+            
+            <div class="flex items-center justify-center gap-1.5 text-emerald-600 text-xs font-semibold tracking-wider uppercase mb-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Sistem Aktif
+            </div>
+
+            <h1 class="text-xl font-bold text-gray-800 tracking-wide">FORM BMT UGT</h1>
+            <p class="text-xs text-gray-500 mt-1">BMT UGT NUSANTARA — Sistem Administrasi & Manajemen Terintegrasi</p>
+        </div>
+
+        <!-- Form Login -->
+        <form id="loginForm" class="mt-6 space-y-4">
+            
+            <!-- Input Username / Kode Kantor -->
+            <div>
+                <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Username / Kode Kantor</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-3 text-gray-400">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </span>
+                    <input type="text" id="username" placeholder="Masukkan Username / Kode Kantor" required
+                        class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 focus:outline-none focus:border-[#1b4d3e] focus:bg-white transition">
+                </div>
+            </div>
+
+            <!-- Input Password -->
+            <div>
+                <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Password</label>
+                <div class="relative flex items-center">
+                    <span class="absolute left-3 text-gray-400">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" id="password" placeholder="••••••••" required
+                        class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 focus:outline-none focus:border-[#1b4d3e] focus:bg-white transition">
+                </div>
+            </div>
+
+            <!-- Opsi Tambahan -->
+            <div class="flex items-center justify-between text-xs text-gray-600 pt-1">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="rounded border-gray-300 text-[#1b4d3e] focus:ring-[#1b4d3e]">
+                    Ingatkan Saya
+                </label>
+                <a href="#" class="text-emerald-700 hover:underline font-medium">Lihat Akun Demo</a>
+            </div>
+
+            <!-- Tombol Masuk Sistem -->
+            <button type="submit" 
+                class="w-full mt-2 py-3 bg-[#1b4d3e] hover:bg-[#14392e] text-white font-semibold rounded-lg shadow-md transition flex items-center justify-center gap-2 text-sm">
+                <i class="fa-solid fa-right-to-bracket"></i> MASUK SISTEM
+            </button>
+
+            <!-- Tombol Akses Kepala Cabang -->
+            <button type="button" id="btnDemo"
+                class="w-full py-3 bg-[#e29342] hover:bg-[#cf8337] text-white font-semibold rounded-lg shadow-md transition flex items-center justify-center gap-2 text-sm">
+                <i class="fa-solid fa-user-tie"></i> AKSES KEPALA CABANG (DEMO)
+            </button>
+        </form>
+
+        <!-- Footer -->
+        <div class="text-center mt-6 pt-4 border-t border-gray-100 text-[11px] text-gray-400">
+            &copy; 2026 FORM BMT UGT • Development - MUHAMMAD NOER HAKIM
+        </div>
+
+    </div>
+
+    <!-- JavaScript untuk interaksi tombol -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            alert('Berhasil mencoba masuk dengan Username: ' + user);
+        });
+
+        document.getElementById('btnDemo').addEventListener('click', function() {
+            document.getElementById('username').value = "kepala_cabang";
+            document.getElementById('password').value = "demopassword123";
+            alert('Akun demo berhasil dimuat! Silakan klik tombol "MASUK SISTEM".');
+        });
+    </script>
+</body>
+</html>
